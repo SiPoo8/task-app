@@ -66,7 +66,7 @@ public class TaskServiceImpl implements TaskService {
         return taskRepository.findByTaskListIdAndId(taskListid,taskId);
 
     }
-
+    @Transactional
     @Override
     public Task updateTask(UUID taskListId, UUID taskId,Task task) {
         if(null==task.getId()){
