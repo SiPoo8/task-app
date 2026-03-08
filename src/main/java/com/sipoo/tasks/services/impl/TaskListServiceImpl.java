@@ -67,8 +67,13 @@ public class TaskListServiceImpl implements TaskListService {
 
         existingTaskList.setTitle(taskList.getTitle());
         existingTaskList.setDescription(taskList.getDescription());
-        existingTaskList.setUpdated(taskList.getUpdated());
+        existingTaskList.setUpdated(LocalDateTime.now());
 
         return taskListRepository.save(existingTaskList);
+    }
+
+    @Override
+    public void deleteTaskList(UUID taskListid) {
+        taskListRepository.deleteById(taskListid);
     }
 }

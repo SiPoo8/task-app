@@ -16,6 +16,8 @@ import java.util.UUID;
 @Data
 public class Task {
 
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id", updatable = false, nullable = false)
@@ -47,4 +49,7 @@ public class Task {
 
     @Column(name = "updated", nullable = false)
     private LocalDateTime updated;
+
+
+
 }
